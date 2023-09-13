@@ -1,0 +1,20 @@
+import axios from "axios";
+
+const url = 'https://pixabay.com/api/';
+const api_key = '38325777-12f57d8108d1a43c6a779e8ee';
+
+let currentPage = 1;
+
+export function getImage(searchText) {
+    return axios.get(url,{
+        params: {
+            key: api_key,
+            q: searchText,
+            image_type: 'photo',
+            orientation: 'horizontal',
+            safesearch: 'true',
+            page: currentPage,
+            per_page: 12,
+        }
+    })
+}
