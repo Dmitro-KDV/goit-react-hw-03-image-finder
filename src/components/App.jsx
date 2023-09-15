@@ -39,7 +39,11 @@ export class App extends Component {
           }  else {
             this.setState({image: response.data.hits});
           }
-          this.setState({totalPage: response.data.totalHits});
+          this.setState({totalPage: response.data.totalHits}, () => {
+            if (this.state.page > 1) {
+              this.scroll();
+            }
+          })
         })
         .catch(function(error) {
             Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
@@ -56,10 +60,7 @@ export class App extends Component {
   }
 
   handleSubmit = () => {
-    // if (this.state.searchText) {
       this.setState({page: this.state.page + 1});
-      this.scroll();
-    // }
   }
 
   openModal = (e) => {
@@ -77,7 +78,6 @@ export class App extends Component {
       top: innerHeight,
       behavior: "smooth",
     });
-    // window.scroll(0, window.innerHeight);
   } 
 
   render() {
