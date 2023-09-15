@@ -1,4 +1,5 @@
 // import {Form, Label} from './Phonebook.stiled';
+
 import { Component } from 'react'
 
 export class Searchbar extends Component {
@@ -16,13 +17,13 @@ export class Searchbar extends Component {
     render() {
         return ( 
             <>
-                <form className="form" onSubmit={this.handleSubmit}>
-                    <button type="submit" className="button">
-                        <span className="button-label">Search</span>
+                <form className="SearchForm" onSubmit={this.handleSubmit}>
+                    <button type="submit" className="SearchForm-button">
+                        <span className="SearchForm-button-label">Search</span>
                     </button>
 
                     <input
-                        className="input"
+                        className="SearchForm-input"
                         type="text"
                         // autocomplete="off"
                         // autofocus

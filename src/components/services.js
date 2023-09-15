@@ -3,9 +3,7 @@ import axios from "axios";
 const url = 'https://pixabay.com/api/';
 const api_key = '38325777-12f57d8108d1a43c6a779e8ee';
 
-let currentPage = 1;
-
-export function getImage(searchText) {
+export function getImage(searchText, page=1) {
     return axios.get(url,{
         params: {
             key: api_key,
@@ -13,7 +11,7 @@ export function getImage(searchText) {
             image_type: 'photo',
             orientation: 'horizontal',
             safesearch: 'true',
-            page: currentPage,
+            page: page,
             per_page: 12,
         }
     })

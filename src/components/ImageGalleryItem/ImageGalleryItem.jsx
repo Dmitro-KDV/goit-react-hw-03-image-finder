@@ -1,9 +1,14 @@
 
-export const ImageGalleryItem = (image) => {
-    console.log(image)
+export const ImageGalleryItem = ({image}) => {
     return (
-        <li className="gallery-item">
-            <img src={image.webformatURL} alt={image.tags} width="249"/>
+        <li className="ImageGalleryItem">
+            <img 
+                className="ImageGalleryItem-image" 
+                src={image.webformatURL} 
+                alt={image.tags} 
+                width="249" 
+                data-source={image.largeImageURL}
+            />
         </li>
     );
 }
