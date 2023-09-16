@@ -110,7 +110,7 @@ export class App extends Component {
             </div>
             }
 
-            {page <= totalPage &&  <Button handleSubmit={this.handleSubmit}/>}
+            {page*12<= totalPage &&  <Button handleSubmit={this.handleSubmit}/>}
           </>
       </div>
     );
